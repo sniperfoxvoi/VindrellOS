@@ -24,60 +24,131 @@
     <div id="desktop" class="desktop hidden">
       <div class="topbar">
         <div class="left-bar">
-          <div class="topbar-pill">Finder</div>
-          <div class="topbar-pill">File</div>
-          <div class="topbar-pill">Edit</div>
-        </div>
-
-        <div class="center-bar">
-          <span class="status-dot"></span>
-          <span>VindrellOS</span>
+          <div class="apple-icon"></div>
+          <div class="menu-item">Finder</div>
+          <div class="menu-item">File</div>
+          <div class="menu-item">Edit</div>
+          <div class="menu-item">View</div>
+          <div class="menu-item">Go</div>
+          <div class="menu-item">Window</div>
+          <div class="menu-item">Help</div>
         </div>
 
         <div class="right-bar">
-          <span id="systemTime">9:41 AM</span>
+          <span class="status-icon">◔</span>
+          <span class="status-icon">⌁</span>
+          <span class="status-icon">◍</span>
+          <span id="systemTime">Wed Apr 1 9:41 AM</span>
         </div>
       </div>
 
-      <div class="desktop-icons">
-        <div class="icon app-icon" data-app="settings">
-          <div class="icon-graphic settings-icon">⚙</div>
-          <span>Settings</span>
-        </div>
-
-        <div class="icon app-icon" data-app="movies">
-          <div class="icon-graphic movies-icon">▶</div>
-          <span>Movies/TV</span>
-        </div>
-
-        <div class="icon app-icon" data-app="browser">
-          <div class="icon-graphic browser-icon">◌</div>
-          <span>Browser</span>
-        </div>
-
-        <div class="icon app-icon" data-app="games">
-          <div class="icon-graphic games-icon">✦</div>
-          <span>Games</span>
-        </div>
-
-        <div class="icon app-icon" data-app="files">
-          <div class="icon-graphic files-icon">▣</div>
-          <span>Files</span>
+      <div class="desktop-widget world-widget">
+        <div class="widget-header">APRIL</div>
+        <div class="world-grid">
+          <div class="city-block">
+            <div class="mini-clock">
+              <span class="hand hour"></span>
+              <span class="hand minute"></span>
+              <span class="hand second"></span>
+            </div>
+            <div class="city-name">Cupertino</div>
+            <div class="city-time">+0HRS</div>
+          </div>
+          <div class="city-block">
+            <div class="mini-clock clock-2">
+              <span class="hand hour"></span>
+              <span class="hand minute"></span>
+              <span class="hand second"></span>
+            </div>
+            <div class="city-name">Tokyo</div>
+            <div class="city-time">+16HRS</div>
+          </div>
+          <div class="city-block">
+            <div class="mini-clock clock-3">
+              <span class="hand hour"></span>
+              <span class="hand minute"></span>
+              <span class="hand second"></span>
+            </div>
+            <div class="city-name">Sydney</div>
+            <div class="city-time">+18HRS</div>
+          </div>
+          <div class="city-block">
+            <div class="mini-clock clock-4">
+              <span class="hand hour"></span>
+              <span class="hand minute"></span>
+              <span class="hand second"></span>
+            </div>
+            <div class="city-name">Paris</div>
+            <div class="city-time">+9HRS</div>
+          </div>
         </div>
       </div>
 
-      <div id="windowsLayer" class="windows-layer"></div>
+      <div class="desktop-icons right-icons">
+        <div class="icon app-icon purple" data-app="files">
+          <div class="icon-graphic">▣</div>
+          <span>Cookbook Projects</span>
+        </div>
+
+        <div class="icon app-icon purple" data-app="movies">
+          <div class="icon-graphic">☰</div>
+          <span>Lectures</span>
+        </div>
+      </div>
+
+      <div class="spotlight-wrap">
+        <div class="spotlight-bar">
+          <span class="search-icon">⌕</span>
+          <span class="placeholder">Spotlight Search</span>
+        </div>
+        <div class="spotlight-actions">
+          <button class="action-btn">⎘</button>
+          <button class="action-btn">▣</button>
+          <button class="action-btn">◫</button>
+          <button class="action-btn">◍</button>
+        </div>
+      </div>
+
+      <div class="bottom-left-stack">
+        <div class="widget weather-card">
+          <div class="weather-header">
+            <div class="weather-city">San Francisco</div>
+            <div class="weather-icon">☼</div>
+          </div>
+          <div class="weather-temp">53°</div>
+          <div class="weather-conditions">Partly Cloudy</div>
+          <div class="weather-range">H:56° L:50°</div>
+          <div class="forecast-row">
+            <div class="day-item"><span>10 AM</span><span>☁</span><span>53°</span></div>
+            <div class="day-item"><span>11 AM</span><span>☁</span><span>54°</span></div>
+            <div class="day-item"><span>12 PM</span><span>☀</span><span>56°</span></div>
+            <div class="day-item"><span>1 PM</span><span>☁</span><span>55°</span></div>
+            <div class="day-item"><span>2 PM</span><span>☀</span><span>54°</span></div>
+          </div>
+        </div>
+
+        <div class="widget call-card">
+          <div class="mini-badge">SCIENCE STUFF</div>
+          <div class="call-avatar">◉</div>
+          <div class="call-text">What is a Quantum Computer?</div>
+          <div class="call-meta">39m</div>
+          <div class="call-button">Call Mom</div>
+        </div>
+      </div>
 
       <div class="dock">
         <div class="dock-inner">
-          <button class="dock-item active" data-app="finder" title="Finder">◫</button>
+          <button class="dock-item active" data-app="finder" title="Finder">⌂</button>
           <button class="dock-item app-button" data-app="browser" title="Browser">◌</button>
           <button class="dock-item app-button" data-app="movies" title="Movies/TV">▶</button>
           <button class="dock-item app-button" data-app="settings" title="Settings">⚙</button>
           <button class="dock-item app-button" data-app="games" title="Games">✦</button>
           <button class="dock-item app-button" data-app="files" title="Files">▣</button>
+          <button class="dock-item trash" title="Trash">⌫</button>
         </div>
       </div>
+
+      <div id="windowsLayer" class="windows-layer"></div>
     </div>
 
     <script src="script.js"></script>
