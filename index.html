@@ -1,76 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VindrellOS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="bootScreen" class="boot-screen">
-      <div class="boot-logo-wrap">
-        <div class="boot-logo">V</div>
-        <div class="boot-name">VindrellOS</div>
-      </div>
-      <div class="boot-bar-wrap">
-        <div class="boot-bar"><div id="bootProgress" class="boot-progress"></div></div>
-        <div id="bootPercent" class="boot-percent">0%</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VindrellOS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="bootScreen" class="screen boot-screen">
+    <div class="boot-logo-wrap"><div class="boot-logo spinning-logo">V</div><div class="boot-name">VindrellOS</div></div>
+    <div class="boot-bar-wrap"><div class="boot-bar"><div id="bootProgress" class="boot-progress"></div></div><div id="bootPercent" class="boot-percent">0%</div></div>
+  </section>
+
+  <section id="introScreen" class="screen intro-screen hidden">
+    <div class="intro-glow"></div><div class="intro-mark">V</div>
+    <p class="eyebrow">A new way to work and play</p>
+    <h1>Welcome to <span>VindrellOS</span></h1>
+    <p class="intro-copy">One web OS. Two familiar worlds. Your choice.</p>
+    <button id="introContinue" class="primary-button">Continue <span>→</span></button>
+  </section>
+
+  <section id="modeScreen" class="screen mode-screen hidden">
+    <div class="mode-card"><div class="mode-mark">V</div><p class="eyebrow">Choose your desktop</p><h1>How do you want to work?</h1><p class="mode-subtitle">You can switch experiences by refreshing VindrellOS.</p>
+      <div class="mode-options">
+        <button class="mode-option mac-option" data-mode="macos"><span class="mode-option-icon">⌘</span><span><strong>macOS</strong><small>Airy workspace with a centered dock</small></span><span>→</span></button>
+        <button class="mode-option windows-option" data-mode="windows"><span class="mode-option-icon">⊞</span><span><strong>Windows</strong><small>Productive workspace with a taskbar</small></span><span>→</span></button>
       </div>
     </div>
+  </section>
 
-    <section id="modeScreen" class="mode-screen hidden" aria-labelledby="modeTitle">
-      <div class="mode-card">
-        <div class="mode-mark">V</div>
-        <p class="eyebrow">VindrellOS startup</p>
-        <h1 id="modeTitle">Choose your desktop</h1>
-        <p class="mode-subtitle">Select an experience to continue.</p>
-        <div class="mode-options">
-          <button class="mode-option" data-mode="macos">
-            <span class="mode-option-icon">⌘</span>
-            <span><strong>macOS</strong><small>Elegant, focused workspace</small></span>
-            <span class="mode-arrow">→</span>
-          </button>
-          <button class="mode-option" data-mode="windows">
-            <span class="mode-option-icon windows-mark">⊞</span>
-            <span><strong>Windows</strong><small>Productive, familiar workspace</small></span>
-            <span class="mode-arrow">→</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <div id="desktop" class="desktop hidden">
-      <div class="topbar">
-        <div class="left-bar">
-          <div class="apple-icon"></div>
-          <div class="menu-item">Finder</div><div class="menu-item">File</div>
-          <div class="menu-item">Edit</div><div class="menu-item">View</div>
-          <div class="menu-item">Go</div><div class="menu-item">Window</div><div class="menu-item">Help</div>
-        </div>
-        <div class="right-bar"><span class="status-icon">◔</span><span class="status-icon">⌁</span><span class="status-icon">◍</span><span id="systemTime">9:41 AM</span></div>
-      </div>
-
-      <div class="desktop-icons">
-        <div class="icon app-icon" data-app="settings"><div class="icon-graphic">⚙</div><span>Settings</span></div>
-        <div class="icon app-icon" data-app="movies"><div class="icon-graphic">▶</div><span>Movies/TV</span></div>
-        <div class="icon app-icon" data-app="browser"><div class="icon-graphic">◌</div><span>Browser</span></div>
-        <div class="icon app-icon" data-app="games"><div class="icon-graphic">✦</div><span>Games</span></div>
-        <div class="icon app-icon" data-app="files"><div class="icon-graphic">▣</div><span>Files</span></div>
-      </div>
-
-      <div class="desktop-center"><div class="desktop-v-mark">V</div><h1>VindrellOS</h1><p id="modeLabel">macOS experience</p></div>
-      <div id="windowsLayer" class="windows-layer"></div>
-
-      <div class="dock"><div class="dock-inner">
-        <button class="dock-item active" data-app="finder" title="Finder">⌂</button>
-        <button class="dock-item app-button" data-app="browser" title="Browser">◌</button>
-        <button class="dock-item app-button" data-app="movies" title="Movies/TV">▶</button>
-        <button class="dock-item app-button" data-app="settings" title="Settings">⚙</button>
-        <button class="dock-item app-button" data-app="games" title="Games">✦</button>
-        <button class="dock-item app-button" data-app="files" title="Files">▣</button>
-        <button class="dock-item trash" title="Trash">⌫</button>
-      </div></div>
+  <main id="desktop" class="desktop hidden">
+    <header class="topbar"><div class="left-bar"><span class="brand-icon">V</span><span id="menuBrand">Finder</span><span>File</span><span>Edit</span><span>View</span><span>Window</span><span>Help</span></div><div class="right-bar"><span>◔</span><span>⌁</span><span>◍</span><span id="systemTime"></span></div></header>
+    <div class="desktop-icons">
+      <div class="icon app-icon" data-app="settings"><div class="icon-graphic">⚙</div><span>Settings</span></div>
+      <div class="icon app-icon" data-app="movies"><div class="icon-graphic">▶</div><span>Movies/TV</span></div>
+      <div class="icon app-icon" data-app="browser"><div class="icon-graphic">◌</div><span>Browser</span></div>
+      <div class="icon app-icon" data-app="games"><div class="icon-graphic">✦</div><span>Games</span></div>
+      <div class="icon app-icon" data-app="files"><div class="icon-graphic">▣</div><span>Files</span></div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div class="desktop-center"><div class="desktop-v-mark">V</div><h1>VindrellOS</h1><p id="modeLabel"></p></div>
+    <div id="windowsLayer" class="windows-layer"></div>
+    <nav class="dock" aria-label="Application dock"><div class="dock-inner"><button class="dock-item" data-app="finder">⌂</button><button class="dock-item app-button" data-app="browser">◌</button><button class="dock-item app-button" data-app="movies">▶</button><button class="dock-item app-button" data-app="settings">⚙</button><button class="dock-item app-button" data-app="games">✦</button><button class="dock-item app-button" data-app="files">▣</button><button class="dock-item">⌫</button></div></nav>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>
